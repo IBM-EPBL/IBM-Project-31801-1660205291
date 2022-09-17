@@ -1,0 +1,1 @@
+All the assignments need to be submitted individually guys. Let we complete everything on time.
