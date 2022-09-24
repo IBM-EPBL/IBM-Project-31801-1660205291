@@ -5,32 +5,82 @@
 }
 
 /* chessboard */
-.chessboard{
+.chessboard-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+}
+.chessboard {
     border-collapse: collapse;
 }
-.chessboard td, th{
+.chessboard td,
+th {
     /* border: 1px solid black; */
     border-collapse: collapse;
     padding: 20px 25px;
 }
 
-.chessboard .board-details{
+.chessboard .board-details {
     border: none;
 }
 
-.chessboard td{
+.chessboard td {
     margin: 0;
 }
 
-.chessboard .board-row .light{
+.chessboard .board-row .light {
     background-color: #e7d3b0;
 }
-.chessboard .board-row .dark{
+.chessboard .board-row .dark {
     background-color: #c19e77;
 }
 
-.board-details{
+.board-details {
     text-transform: uppercase;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     font-weight: 600;
+}
+
+/* rainbow */
+
+.rainbow-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 80px;
+    margin-top: 100px;
+}
+.rainbow,
+td,
+tr {
+    padding: 20px;
+    border-collapse: collapse;
+}
+
+.rainbow .violet {
+    background-color: #2f0096;
+}
+.rainbow .indigo {
+    background-color: #00007e;
+}
+.rainbow .blue {
+    background-color: #0096f6;
+}
+.rainbow .green {
+    background-color: #02b500;
+}
+.rainbow .yellow {
+    background-color: #f7ee02;
+}
+.rainbow .orange {
+    background-color: #f75f2f;
+}
+.rainbow .red {
+    background-color: #d70000;
 }
