@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* chessboard */
+.chessboard-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+}
+.chessboard {
+    border-collapse: collapse;
+}
+.chessboard td,
+th {
+    /* border: 1px solid black; */
+    border-collapse: collapse;
+    padding: 20px 25px;
+}
+
+.chessboard .board-details {
+    border: none;
+}
+
+.chessboard td {
+    margin: 0;
+}
+
+.chessboard .board-row .light {
+    background-color: #e7d3b0;
+}
+.chessboard .board-row .dark {
+    background-color: #c19e77;
+}
+
+.board-details {
+    text-transform: uppercase;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 600;
+}
+
+/* rainbow */
+
+.rainbow-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 80px;
+    margin-top: 100px;
+}
+.rainbow,
+td,
+tr {
+    padding: 20px;
+    border-collapse: collapse;
+}
+
+.rainbow .violet {
+    background-color: #2f0096;
+}
+.rainbow .indigo {
+    background-color: #00007e;
+}
+.rainbow .blue {
+    background-color: #0096f6;
+}
+.rainbow .green {
+    background-color: #02b500;
+}
+.rainbow .yellow {
+    background-color: #f7ee02;
+}
+.rainbow .orange {
+    background-color: #f75f2f;
+}
+.rainbow .red {
+    background-color: #d70000;
+}
+
+/* ticTacToe */
+
+.ticTacToe-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 100px;
+}
+
+.ticTacToe {
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.ticTacToe,
+td,
+tr {
+    padding: 30px;
+    border: 3px solid rgb(0, 0, 0);
+    border-collapse: collapse;
+}
+.tl {
+    border-top: 3px solid transparent;
+    border-left: 3px solid transparent;
+}
+.tc {
+    border-top: 3px solid transparent;
+}
+.tr {
+    border-top: 3px solid transparent;
+    border-right: 3px solid transparent;
+}
+.cl {
+    border-left: 3px solid transparent;
+}
+.cc {
+}
+.cr {
+    border-right: 3px solid transparent;
+}
+.bl {
+    border-left: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+.bc {
+    border-bottom: 3px solid transparent;
+}
+.br {
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+
+.o{
+    color: red;
+}
+
+.x{
+    color: #00a04d;
+}
