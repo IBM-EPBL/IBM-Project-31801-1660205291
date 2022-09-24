@@ -147,5 +147,15 @@
     color: #00a04d;
 }
 
+/* timetable */
+
+.timeTable-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
 
 /* registration form */
