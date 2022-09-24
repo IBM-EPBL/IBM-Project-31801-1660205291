@@ -1,0 +1,18 @@
+h1{
+	border: 20px;
+	background-color: blue;
+	color: red;
+}
+img{
+	width: 300px;
+}
+h2{
+	border: 20px;
+	background-color: lightgreen;
+	color: red;
+}
+h3{
+	color: black;
+	border: 20px;
+	background-color: lightblue;
+}
