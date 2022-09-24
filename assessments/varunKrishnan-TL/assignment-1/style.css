@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* chessboard */
+table{
+    border-collapse: collapse;
+}
+td, th{
+    /* border: 1px solid black; */
+    border-collapse: collapse;
+    padding: 20px 25px;
+}
+
+.chessboard .board-details{
+    border: none;
+}
+
+.chessboard td{
+    margin: 0;
+}
+
+.chessboard .board-row .light{
+    background-color: #e7d3b0;
+}
+.chessboard .board-row .dark{
+    background-color: #c19e77;
+}
+
+.board-details{
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
