@@ -18,8 +18,7 @@
     border-collapse: collapse;
 }
 .chessboard td,
-th {
-    /* border: 1px solid black; */
+.chessboard th {
     border-collapse: collapse;
     padding: 20px 25px;
 }
@@ -57,8 +56,8 @@ th {
     margin-top: 100px;
 }
 .rainbow,
-td,
-tr {
+.rainbow td,
+.rainbow tr {
     padding: 20px;
     border-collapse: collapse;
 }
@@ -87,7 +86,7 @@ tr {
 
 /* ticTacToe */
 
-.ticTacToe-container{
+.ticTacToe-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,47 +102,47 @@ tr {
 }
 
 .ticTacToe,
-td,
-tr {
+.ticTacToe td,
+.ticTacToe tr {
     padding: 30px;
     border: 3px solid rgb(0, 0, 0);
     border-collapse: collapse;
 }
-.tl {
+.ticTacToe .tl {
     border-top: 3px solid transparent;
     border-left: 3px solid transparent;
 }
-.tc {
+.ticTacToe .tc {
     border-top: 3px solid transparent;
 }
-.tr {
+.ticTacToe .tr {
     border-top: 3px solid transparent;
     border-right: 3px solid transparent;
 }
-.cl {
+.ticTacToe .cl {
     border-left: 3px solid transparent;
 }
-.cc {
+.ticTacToe .cc {
 }
-.cr {
+.ticTacToe .cr {
     border-right: 3px solid transparent;
 }
-.bl {
+.ticTacToe .bl {
     border-left: 3px solid transparent;
     border-bottom: 3px solid transparent;
 }
-.bc {
+.ticTacToe .bc {
     border-bottom: 3px solid transparent;
 }
-.br {
+.ticTacToe .br {
     border-right: 3px solid transparent;
     border-bottom: 3px solid transparent;
 }
 
-.o{
+.ticTacToe .o {
     color: red;
 }
 
-.x{
+.ticTacToe .x {
     color: #00a04d;
 }
