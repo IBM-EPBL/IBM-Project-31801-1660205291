@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ticTacToe-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 100px;
+}
+
+.ticTacToe {
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.ticTacToe,
+.ticTacToe td,
+.ticTacToe tr {
+    padding: 30px;
+    border: 3px solid rgb(0, 0, 0);
+    border-collapse: collapse;
+}
+.ticTacToe .tl {
+    border-top: 3px solid transparent;
+    border-left: 3px solid transparent;
+}
+.ticTacToe .tc {
+    border-top: 3px solid transparent;
+}
+.ticTacToe .tr {
+    border-top: 3px solid transparent;
+    border-right: 3px solid transparent;
+}
+.ticTacToe .cl {
+    border-left: 3px solid transparent;
+}
+.ticTacToe .cc {
+}
+.ticTacToe .cr {
+    border-right: 3px solid transparent;
+}
+.ticTacToe .bl {
+    border-left: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+.ticTacToe .bc {
+    border-bottom: 3px solid transparent;
+}
+.ticTacToe .br {
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+
+.ticTacToe .o {
+    color: red;
+}
+
+.ticTacToe .x {
+    color:blueviolet;
+}

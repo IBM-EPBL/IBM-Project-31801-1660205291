@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.rainbow {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 100px;
+}
+.rainbow,
+.rainbow td,
+.rainbow tr {
+    padding: 20px;
+    border-collapse: collapse;
+}
+
+.rainbow .violet {
+    background-color: #2f0096;
+}
+.rainbow .indigo {
+    background-color: #00007e;
+}
+.rainbow .blue {
+    background-color: #0096f6;
+}
+.rainbow .green {
+    background-color: #02b500;
+}
+.rainbow .yellow {
+    background-color: #f7ee02;
+}
+.rainbow .orange {
+    background-color: #f75f2f;
+}
+.rainbow .red {
+    background-color: #d70000;
+}
