@@ -11,7 +11,7 @@ message = Mail(
     html_content='<strong>Hello Nandhakumar! We found some jobs for you. Login to jobby to apply</strong>'
 )
 try:
-    sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+    sg = SendGridAPIClient("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")
     response = sg.send(message)
     print(response.status_code)
     print(response.body)
