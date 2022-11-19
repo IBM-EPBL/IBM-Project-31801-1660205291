@@ -52,8 +52,6 @@ def register():
         name = request.form['name']
         email = request.form['email']
         phone = request.form['phone']
-        skills = request.form['skills']
-        youare = request.form['youare']
         password = request.form['password']
         sql = "SELECT * FROM user WHERE email =?"
         stmt = ibm_db.prepare(conn, sql)
@@ -68,14 +66,12 @@ def register():
         elif not re.match(r'[A-Za-z0-9]+', name):
             msg = 'name must contain only characters and numbers !'
         else:
-            insert_sql = "INSERT INTO  user VALUES (?, ?, ?, ?, ?, ?)"
+            insert_sql = "INSERT INTO  user VALUES (?, ?, ?, ?)"
             prep_stmt = ibm_db.prepare(conn, insert_sql)
             ibm_db.bind_param(prep_stmt,1,name)
             ibm_db.bind_param(prep_stmt,2,email)
             ibm_db.bind_param(prep_stmt,3,phone)
-            ibm_db.bind_param(prep_stmt,4,skills)
-            ibm_db.bind_param(prep_stmt,5,youare)
-            ibm_db.bind_param(prep_stmt,6,password)
+            ibm_db.bind_param(prep_stmt,4,password)
             ibm_db.execute(prep_stmt)
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
@@ -84,21 +80,24 @@ def register():
 
 @app.route('/dashboard')
 def dash():
-    
     return render_template('dashboard.html')
 
 @app.route('/apply',methods =['GET', 'POST'])
 def apply():
      msg = ''
      if request.method == 'POST' :
-         username = request.form['username']
-         email = request.form['email']
-         
+         job = request.form['job']
+         name = request.form['name']
+         email= request.form['email']
          qualification= request.form['qualification']
          skills = request.form['skills']
-         jobs = request.form['s']
+         youare = request.form['youare']
+         experience = request.form['experience']
          sql = "SELECT * FROM user WHERE username =?"
          
+
+
+
          '''stmt = ibm_db.prepare(conn, sql)
          #ibm_db.bind_param(stmt,1,username)
          ibm_db.execute(stmt)
@@ -109,40 +108,37 @@ def apply():
            # return render_template('apply.html', msg = msg)'''
 
          
-         
-         insert_sql = "INSERT INTO  job VALUES (?, ?, ?, ?, ?)"
+         insert_sql = "INSERT INTO  jobs VALUES (?, ?, ?, ?, ?, ?, ?)"
          prep_stmt = ibm_db.prepare(conn, insert_sql)
-         ibm_db.bind_param(prep_stmt, 1, username)
-         ibm_db.bind_param(prep_stmt, 2, email)
-         ibm_db.bind_param(prep_stmt, 3, qualification)
-         ibm_db.bind_param(prep_stmt, 4, skills)
-         ibm_db.bind_param(prep_stmt, 5, jobs)
+         ibm_db.bind_param(prep_stmt, 1, job)
+         ibm_db.bind_param(prep_stmt, 2, name)
+         ibm_db.bind_param(prep_stmt, 3, email)
+         ibm_db.bind_param(prep_stmt, 4, qualification)
+         ibm_db.bind_param(prep_stmt, 5, skills)
+         ibm_db.bind_param(prep_stmt, 6, youare)
+         ibm_db.bind_param(prep_stmt, 7, experience)
          ibm_db.execute(prep_stmt)
          msg = 'You have successfully applied for job !'
          session['loggedin'] = True
-         TEXT = "Hello sandeep,a new appliaction for job position" +jobs+"is requested"
-         
-         #sendmail(TEXT,"sandeep@thesmartbridge.com")
-        #
-        #  sendgridmail("sandeep@thesmartbridge.com",TEXT)
-         
-         
-         
+        #  TEXT = "Hello sandeep,a new appliaction for job position" +jobs+"is requested"
+
      elif request.method == 'POST':
          msg = 'Please fill out the form !'
      return render_template('apply.html', msg = msg)
 
+
+
 @app.route('/display')
 def display():
-    print(session["username"],session['id'])
+    print(session["email"],session['id'])
     
     cursor = mysql.connection.cursor()
-    cursor.execute('SELECT * FROM job WHERE userid = % s', (session['id'],))
+    cursor.execute('SELECT * FROM jobs WHERE userid = % s', (session['id'],))
     account = cursor.fetchone()
     print("accountdislay",account)
 
-    
     return render_template('display.html',account = account)
+
 
 @app.route('/logout')
 

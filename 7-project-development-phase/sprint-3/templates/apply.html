@@ -24,11 +24,33 @@
         <img class="logo" src="https://skilljobassets.s3.au-syd.cloud-object-storage.appdomain.cloud/logo.svg" alt="SeekCareer Logo">
     </a>
     <h1 class="form_title">Apply Job</h1>
-    <form action="/register" method="POST" enctype="multipart/form-data">
+
+    <p>{{msg}}</p>
+    <form action="/apply" method="POST" enctype="multipart/form-data">
+
+        
+
+
+        <div class="input_container">
+            <label class="input_label" for="skills">Choose Job</label>
+            <select class="input_select" name="job" id="skills">
+                <option value="App / Web Developer">Mobile / Web App Developer</option>
+                <option value="AI and ML Engineer">AI and ML Engineer</option>
+                <option value="Data Scientist">Data Scientist</option>
+                <option value="Network Engineer">Network Engineer</option>
+            </select>
+        </div>
+
         <div class="input_container">
             <label class="input_label" for="name">Name</label>
             <input class="input" type="text" name="name" id="name">
         </div>
+
+        <div class="input_container">
+            <label class="input_label" for="email">Email</label>
+            <input class="input" type="text" name="email" id="email">
+        </div>
+
         <div class="input_container">
             <label class="input_label" for="qualification">Qualification</label>
             <input class="input" type="text" name="qualification" id="qualification">
@@ -38,20 +60,29 @@
             <label class="input_label" for="skills">Skills</label>
             <input class="input " type="text" name="skills" id="skills">
         </div>
+
         <div class="input_container">
-            <label class="input_label" for="exp">Years of Experience</label>
-            <input class="input " type="number" name="exp" id="exp">
+            <label class="input_label" for="skills">You are</label>
+            <select class="input_select" name="youare" id="skills">
+                <option value="Fresher">Fresher</option>
+                <option value="Experienced">Experienced</option>
+            </select>
         </div>
 
         <div class="input_container">
+            <label class="input_label" for="experience">Experience</label>
+            <input class="input " type="number" name="experience" id="experience">
+        </div>
+
+        <!-- <div class="input_container">
             <label for="formFileLg" class="form-label input_label">Upload resume</label>
             <input class="form-control form-control" id="formFileLg" type="file" name="file">
-        </div>
+        </div> -->
         <button type="submit" class="btn my-4 py-2 px-5">Apply now</button>
     </form>
 
     <p class="text-center">
-        <a href="./index.html">Back to dashboard</a>
+        <a href="/dashboard">Back to dashboard</a>
     </p>
 
 
