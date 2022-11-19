@@ -1,0 +1,4 @@
+flask
+flask_mysqldb
+ibm_db
+sendgrid

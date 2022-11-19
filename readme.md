@@ -15,7 +15,7 @@ src="https://media1.giphy.com/media/WTjXuYA2y4o3UZly3W/giphy.gif?cid=ecf05e47byo
 |  Team Leader  | **Varun Krishnan V** |
 | Team Member 1 |  **Nandhakumar M**   |
 | Team Member 2 |  **Suriyasankar P**  |
-| Team Member 3 |   **Surendhar P**    |
+| Team Member 3 |   **Surendhar S**    |
 | Team Member 4 |    **Sharath R**     |
 
 ## Required Skills :

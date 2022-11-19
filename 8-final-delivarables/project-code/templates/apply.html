@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./../static/css/global.css">
+    <link rel="stylesheet" href="./../static/css/form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <a href="./index.html">
+        <img class="logo" src="https://skilljobassets.s3.au-syd.cloud-object-storage.appdomain.cloud/logo.svg" alt="SeekCareer Logo">
+    </a>
+    <h1 class="form_title">Apply Job</h1>
+
+    <p>{{msg}}</p>
+    <form action="/apply" method="POST" enctype="multipart/form-data">
+
+        
+
+
+        <div class="input_container">
+            <label class="input_label" for="skills">Choose Job</label>
+            <select class="input_select" name="job" id="skills">
+                <option value="App / Web Developer">Mobile / Web App Developer</option>
+                <option value="AI and ML Engineer">AI and ML Engineer</option>
+                <option value="Data Scientist">Data Scientist</option>
+                <option value="Network Engineer">Network Engineer</option>
+            </select>
+        </div>
+
+        <div class="input_container">
+            <label class="input_label" for="name">Name</label>
+            <input class="input" type="text" name="name" id="name">
+        </div>
+
+        <div class="input_container">
+            <label class="input_label" for="email">Email</label>
+            <input class="input" type="text" name="email" id="email">
+        </div>
+
+        <div class="input_container">
+            <label class="input_label" for="qualification">Qualification</label>
+            <input class="input" type="text" name="qualification" id="qualification">
+        </div>
+
+        <div class="input_container">
+            <label class="input_label" for="skills">Skills</label>
+            <input class="input " type="text" name="skills" id="skills">
+        </div>
+
+        <div class="input_container">
+            <label class="input_label" for="skills">You are</label>
+            <select class="input_select" name="youare" id="skills">
+                <option value="Fresher">Fresher</option>
+                <option value="Experienced">Experienced</option>
+            </select>
+        </div>
+
+        <div class="input_container">
+            <label class="input_label" for="experience">Experience</label>
+            <input class="input " type="number" name="experience" id="experience">
+        </div>
+
+        <!-- <div class="input_container">
+            <label for="formFileLg" class="form-label input_label">Upload resume</label>
+            <input class="form-control form-control" id="formFileLg" type="file" name="file">
+        </div> -->
+        <button type="submit" class="btn my-4 py-2 px-5">Apply now</button>
+    </form>
+
+    <p class="text-center">
+        <a href="/dashboard">Back to dashboard</a>
+    </p>
+
+
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "54dc622d-eb09-465e-a3c9-7c7e2ab312e0", // The ID of this integration.
+            region: "au-syd", // The region your integration is hosted in.
+            serviceInstanceID: "cd3c3dec-2082-4170-8bdd-10b7587cb9bc", // The ID of your service instance.
+            onLoad: function (instance) { instance.render(); }
+        };
+        setTimeout(function () {
+            const t = document.createElement('script');
+            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+        });
+    </script>
+</body>
+
+</html>
