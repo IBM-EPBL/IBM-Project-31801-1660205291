@@ -101,15 +101,11 @@ h2 {
     color: rgb(75, 75, 75);
     margin-top: 8px;
 }
-.job__company {
-}
-.job__package {
-}
+
 .job__description {
     margin-top: 16px;
     font-size: 14px;
     line-height: 1.5;
-    font-size: ;
     color: rgb(101, 101, 101);
 }
 .job .btn {
