@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, session
+from flask_mysqldb import MySQL
 import ibm_db
 import re
 
-
 app = Flask(__name__)
-  
+
 app.secret_key = 'a'
 
 conn = ibm_db.connect("DATABASE=bludb;HOSTNAME=54a2f15b-5c0f-46df-8954-7e38e612c2bd.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud;PORT=32733;SECURITY=SSL;SSLServerCertificate=Certificate.crt;UID=WJR97330;PWD=LyIGvWljvyXnJEUy",'','')
@@ -95,18 +95,6 @@ def apply():
          experience = request.form['experience']
          sql = "SELECT * FROM user WHERE username =?"
          
-
-
-
-         '''stmt = ibm_db.prepare(conn, sql)
-         #ibm_db.bind_param(stmt,1,username)
-         ibm_db.execute(stmt)
-         account = ibm_db.fetch_assoc(stmt)
-         print(account)
-         #if account:
-           # msg = 'there is only 1 job position! for you'
-           # return render_template('apply.html', msg = msg)'''
-
          
          insert_sql = "INSERT INTO  jobs VALUES (?, ?, ?, ?, ?, ?, ?)"
          prep_stmt = ibm_db.prepare(conn, insert_sql)
@@ -128,17 +116,38 @@ def apply():
 
 
 
-@app.route('/display')
+@app.route('/myjobs')
 def display():
-    print(session["email"],session['id'])
+    # print(session["email"],session['id'])
+
+# import ibm_db
+
+# conn = ibm_db.connect("database","username","password")
+# sql = "SELECT * FROM EMPLOYEE"
+# stmt = ibm_db.exec_immediate(conn, sql)
+# dictionary = ibm_db.fetch_assoc(stmt)
+# while dictionary != False:
+#     print "The ID is : ", dictionary["EMPNO"]
+#     print "The name is : ", dictionary["FIRSTNME"]
+#     dictionary = ibm_db.fetch_assoc(stmt)
+
+    sql = f"SELECT * FROM jobs where email = '{session['email']}'"
+    stmt = ibm_db.prepare(conn, sql)
+    ibm_db.execute(stmt)
+    jobs = []
+    account = ibm_db.fetch_assoc(stmt)
+    while account != False:
+        jobs.append(account)
+        account = ibm_db.fetch_assoc(stmt)
     
-    cursor = mysql.connection.cursor()
-    cursor.execute('SELECT * FROM jobs WHERE userid = % s', (session['id'],))
-    account = cursor.fetchone()
-    print("accountdislay",account)
+    print(jobs)
 
-    return render_template('display.html',account = account)
+    return render_template('myjobs.html', account = jobs)
 
+    # cursor = mysql.connection.cursor()
+    # cursor.execute('SELECT * FROM jobs WHERE email = %s', (session['id']))
+    # account = cursor.fetchone()
+    # print("accountdislay",account)
 
 @app.route('/logout')
 

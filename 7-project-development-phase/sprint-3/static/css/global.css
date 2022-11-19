@@ -126,6 +126,10 @@ h2 {
     margin-top: 50px;
 }
 
+tr td{
+    font-size : 16px;
+}
+
 .footer {
     background-color: rgba(246, 246, 246, 0.311);
     border-top: 1px solid gray;
@@ -145,3 +149,4 @@ h2 {
         border: 1px solid rgb(237, 237, 237);
     }
 }
+
