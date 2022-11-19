@@ -16,7 +16,7 @@ spec:
         spec:
             containers:
                 - name: web
-                  image: varunkrishnan/flask
+                  image: Nandhakumar/flask
                   imagePullPolicy: Never
                   ports:
                       - containerPort: 5000
